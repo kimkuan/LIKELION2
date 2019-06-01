@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <div class = "alert alert-warning" style="text-align: center">
+                    <img src = "{% static 'ogu.png' %}" width="200" height="200" alt="ogu">
+                    <br>
+                    <form action = "{% url 'count' %}">
+                    <div class="form-group" style="text-align:center">
+                        <label for="exampleFormControlTextarea1">~ 텍스트를 입력해주세요! ~</label>
+                        <textarea class="form-control" name="fulltext" cols="8" rows="10"></textarea>
+                    </div>
+                     
+                     <button type="submit" class="btn btn-outline-dark" >count!</button>
+                    </form>
+            </div>
+{% endblock %}

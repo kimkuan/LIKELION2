@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+            <br>
+            <h4 style="text-align: center">입력한 텍스트는 {{ total }}단어로 구성되어 있습니다!</h4>
+            <br><br>
+            <div class="alert alert-warning" role="alert">
+                    <div class="count_result">
+                            <h5>입력한 텍스트 : </h5>
+                            {{ fulltext }}
+                            <br><br>
+                            <h5>단어 카운트 : </h5>
+                            {% for word, countTotal in dictionary %}
+                            {{ word }} - {{ countTotal }}
+                            <br>
+                            {% endfor %}     
+                    </div>       
+            </div>
+            <br>
+            <br>
+            <a href="{% url 'home' %}">다시하기</a>
+{% endblock %}
